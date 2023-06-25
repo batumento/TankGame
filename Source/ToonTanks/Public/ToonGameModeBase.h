@@ -25,4 +25,9 @@ protected:
 private:
 
 	class ATank* TankRef;
+	class ATankPlayerController* TankController;
+
+	float StartGame = 3.f;
+
+	void HandleGameStart();
 };
