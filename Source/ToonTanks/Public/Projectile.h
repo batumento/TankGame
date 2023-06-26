@@ -7,6 +7,8 @@
 #include "Projectile.generated.h"
 
 class UProjectileMovementComponent;
+class UParticleSystem;
+
 
 UCLASS()
 class TOONTANKS_API AProjectile : public AActor
@@ -42,4 +44,10 @@ private:
 		UPrimitiveComponent* OtherComp,
 		FVector NormalImpulse,
 		const FHitResult& Hit);
+	
+	UPROPERTY(EditAnywhere, Category="Combat")
+	UParticleSystem* HitParticles;
+
+	UPROPERTY(EditAnywhere,Category="Combat")
+	UParticleSystemComponent* TrailParticles;
 };

@@ -21,13 +21,22 @@ public:
 protected:
 
 	virtual  void BeginPlay() override;
+
+	UFUNCTION(BlueprintImplementableEvent)
+	void StartGameWidget();
+
+	UFUNCTION(BlueprintImplementableEvent)
+	void GameOver(bool bWonGame);
 	
 private:
 
 	class ATank* TankRef;
 	class ATankPlayerController* TankController;
 
-	float StartGame = 3.f;
+	float StartGame = 4.f;
 
 	void HandleGameStart();
+
+	int32 TargetTowers;
+	int32 GetTargetTowerCount();
 };

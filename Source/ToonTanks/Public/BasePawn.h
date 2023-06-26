@@ -6,7 +6,6 @@
 #include "GameFramework/Pawn.h"
 #include "BasePawn.generated.h"
 
-
 class UCapsuleComponent;
 
 UCLASS()
@@ -32,6 +31,7 @@ protected:
 	
 	UPROPERTY(EditDefaultsOnly, Category= "Combat")
 	TSubclassOf<class AProjectile> ProjectileClass;
+
 private:
 	
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category= "Components", meta=(AllowPrivateAccess = "true"))
