@@ -7,7 +7,8 @@
 #include "Kismet/GameplayStatics.h"
 #include "DrawDebugHelpers.h"
 #include "Projectile.h"
-#include "Projects.h"
+#include "Kismet/GameplayStatics.h"
+#include "Particles/ParticleSystem.h"
 
 
 // Sets default values
@@ -47,6 +48,10 @@ void ABasePawn::Fire()
 void ABasePawn::HandleDestruction()
 {
 	//Visual/sound effects
+	if (DeathParticle)
+	{
+		UGameplayStatics::SpawnEmitterAtLocation(GetWorld(), DeathParticle, GetActorLocation(), GetActorRotation());
+	}
 }
 
 
