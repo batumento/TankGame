@@ -8,6 +8,8 @@
 
 class UProjectileMovementComponent;
 class UParticleSystem;
+class USoundBase;
+class UCameraShakeBase;
 
 
 UCLASS()
@@ -50,4 +52,12 @@ private:
 
 	UPROPERTY(EditAnywhere,Category="Combat")
 	UParticleSystemComponent* TrailParticles;
+
+	UPROPERTY(EditAnywhere,Category="Combat")
+	USoundBase* LaunchSound;
+	UPROPERTY(EditAnywhere,Category="Combat")
+	USoundBase* HitSound;
+
+	UPROPERTY(EditAnywhere, Category="Combat")
+	TSubclassOf<UCameraShakeBase> HitCameraShakeClass;
 };

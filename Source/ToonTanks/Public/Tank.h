@@ -22,12 +22,12 @@ public:
 	ATank();
 	
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
-
-	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
 	void HandleDestruction();
 
+	bool bAlive = true;
+	
 	APlayerController* GetTankPlayerController() const { return TankPlayerController; }
 	
 protected:

@@ -27,7 +27,10 @@ void ATurret::BeginPlay()
 
 void ATurret::CheckFireCondition()
 {
-	if (InFireRange())
+	if (Tank == nullptr)
+		return;
+	
+	if (InFireRange() && Tank->bAlive)
 		Fire();
 	
 }
